@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+body {
+    font-family: demibold;
+    letter-spacing: 0;
+    line-height: 1.3;
+    font-size: 14px;
+    color: #1E1E1E
+}
+
+.inner {
+    width: 93.6%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inner2 {
+    width: 93.6%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*.  header.     */
+header h1 {
+    text-align: center;
+}
+
+/*.  mainvisual.     */
+.mainvisual {
+    background: url(images/bg_main.png)no-repeat center center/cover;
+    padding: 240px 0 80px;
+}
+
+
+
+.mainvisual article {
+    background-color: #fff;
+    padding: 5% 4%;
+    width: 50%;
+}
+
+.mainvisual h1 {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.mainvisual h2 {
+    margin-bottom: 5%;
+    font-size: 80%;
+}
+
+/* discussion */
+.discussion {
+    margin-top: 100px;
+}
+
+.discussion h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.discussion h1::before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: #72C9F3;
+
+}
+
+.discussion h1::after {
+    content: "";
+    display: block;
+    border-bottom: solid 1px #000;
+    width: 100px;
+}
+
+.discussion img {
+    width: 100%;
+    height: auto;
+}
+
+.discussion article {
+    position: relative;
+}
+
+.discussion h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+.discussion ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    column-gap: 1%;
+    font-size: 50%;
+}
+
+.discussion p {
+    margin: 20px 0;
+}
+
+.discussion li {
+    background-color: #F5F5F5;
+    padding: 6px 10px;
+}
+
+@media(640px < width) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5%;
+        ;
+    }
+}
+
+/*. footer       */
+footer {
+    background-color: #1E1E1E;
+    color: #fff;
+}
+
+footer article {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    text-align: left;
+    column-gap: 5%;
+}
