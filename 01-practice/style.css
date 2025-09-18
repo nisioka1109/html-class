@@ -85,6 +85,12 @@ header h1 {
 
 .discussion article {
     position: relative;
+    border-bottom: solid 2px #ddd;
+    padding-bottom: 20%;
+}
+
+.discussion article:last-child {
+    border-bottom: none;
 }
 
 .discussion h3 {
@@ -102,6 +108,11 @@ header h1 {
     font-size: 50%;
 }
 
+.layout {
+    display: grid;
+    row-gap: 10%;
+}
+
 .discussion p {
     margin: 20px 0;
 }
@@ -116,7 +127,10 @@ header h1 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 5%;
-        ;
+    }
+
+    .discussion article {
+        border-bottom: none;
     }
 }
 
@@ -124,12 +138,35 @@ header h1 {
 footer {
     background-color: #1E1E1E;
     color: #fff;
+    padding: 10% 0;
+    text-align: center;
 }
 
 footer article {
     display: grid;
     grid-auto-flow: column;
-    justify-content: center;
+    justify-content: left;
     text-align: left;
     column-gap: 5%;
+}
+
+.about {
+    display: grid;
+    row-gap: 40%;
+}
+
+small {
+    margin-top: 100px;
+}
+
+@media(640px < width) {
+    footer {
+        margin-top: 100px;
+    }
+}
+
+@media(640px > width) {
+    footer {
+        margin-top: 150px;
+    }
 }
