@@ -1,0 +1,230 @@
+@use 'sass:math';
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+img {
+    height: auto;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+/* header.     */
+
+.header {
+    padding: 3%;
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .global ul {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        column-gap: 20%;
+    }
+
+    .global ul li {
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #FF9900;
+    }
+
+    &_inner {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        width: 88%;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.main {
+
+    /* residential.   */
+    .residential {
+        .subtitle {
+            color: #FF9900;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 48px;
+            margin-bottom: 40px
+        }
+
+        p {
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            background-color: #F85A47;
+            padding: 20px 34px;
+            border-radius: 20px;
+            width: 200px;
+            color: #fff;
+        }
+
+        &_inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 60px;
+            max-width: 1000px;
+            width: 88%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &_column {
+            padding: 4% 0 4%;
+        }
+    }
+
+    /* custmer.   */
+    .custmer {
+        margin-top: 120px;
+        margin-bottom: 120px;
+
+        &_inner {
+            width: 88%;
+            max-width: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .subtitle {
+            color: #FF9900;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 48px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        &_column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 60px;
+        }
+
+        &_comment {
+            padding: 40px 40px 45px 40px;
+            border: solid 1px #A3A3A3;
+            border-radius: 10px;
+        }
+
+        &_profile {
+            margin-top: 80px;
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: left;
+            column-gap: 3%;
+        }
+
+        &_text {
+            display: grid;
+            row-gap: 20%;
+        }
+    }
+}
+
+/* footer.   */
+.footer {
+    background-color: #DBFFFF;
+    padding: 100px 0;
+    text-align: right;
+
+    &_inner {
+        width: 88%;
+        max-width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &_global ul {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        column-gap: 30px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    &_global ul .orange {
+        color: #FF9900;
+    }
+}
+
+/* about.index.  */
+.infomation {
+    margin-top: 3%;
+
+    &_inner {
+        width: 88%;
+        max-width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &_subtitle {
+        color: #FF9900;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    &_title {
+        font-size: 43px;
+        margin-bottom: 40px;
+    }
+
+    .house {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 50px;
+        margin-top: 60px;
+
+        .btn {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            background-color: #FF9900;
+            color: #fff;
+            padding: 20px 33px;
+            border-radius: 20px;
+            width: 300px;
+        }
+
+        &_text {
+            padding-top: 20px;
+        }
+
+        p {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.about {
+    .residential {
+        margin: 120px 0;
+    }
+
+    .residential_column {
+        order: 1;
+        margin-top: 30px;
+    }
+}
