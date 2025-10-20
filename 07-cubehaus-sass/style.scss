@@ -1,0 +1,247 @@
+@use "sass:math";
+$bs: (
+    "desktop": 1000px,
+    "br": 560px,
+);
+
+@mixin mq($b: desktop) {
+    @media (#{map-get($bs, $b)} <=width) {
+        @content;
+    }
+}
+
+@mixin inner($mw: 1000px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    $font-famly-base: "游ゴシック", "Yu Gothic", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+//header
+.header {
+    padding: 40px 0;
+
+    &_logo {
+        font-family: Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    &_inner {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        @include inner()
+    }
+
+    &_global ul {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 30px;
+    }
+
+    &_company {
+        color: #E40065;
+    }
+}
+
+/* mainvisual. */
+.mainvisual {
+    margin-bottom: 80px;
+
+    &_inner {
+        @include inner()
+    }
+}
+
+// philosophy
+@mixin title-main($t) {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: bold;
+
+    &::before {
+        content: $t;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    &::after {
+        content: "";
+    }
+}
+
+.philosophy {
+    &_title {
+        @include title-main("philosophy");
+    }
+
+    &_title::after {
+        content: "";
+        display: block;
+        border-bottom: solid 2px #E40065;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+
+
+    }
+
+    &_inner {
+        @include inner
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 60px;
+        line-height: 2.5;
+    }
+}
+
+.works {
+    margin-bottom: 120px;
+
+    &_title {
+        @include title-main("WORKS");
+    }
+
+    &_title::after {
+        content: "";
+        display: block;
+        border-bottom: solid 2px #E40065;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+
+
+    }
+
+    &_house {
+        position: relative;
+    }
+
+    &_inner {
+        @include inner()
+    }
+
+    &_new {
+        position: absolute;
+        bottom: 150px;
+        left: 20px;
+        background-color: #E40065;
+        color: #fff;
+        border-radius: 20px;
+        padding: 8px 15px 5px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    &_subtitle {
+        font-weight: bold;
+        margin: 30px 0 20px;
+    }
+
+    &_column {
+        display: grid;
+        row-gap: 60px;
+    }
+
+    @media(width >=#{map-get($bs,"desktop")}) {
+        &_column {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+        }
+    }
+}
+
+// voice.
+.voice {
+    background-color: #F4F4F4;
+    padding: 80px 0 120px;
+
+    &_title {
+        @include title-main("VOICE")
+    }
+
+    &_title::after {
+        content: "";
+        display: block;
+        border-bottom: solid 2px #E40065;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+
+
+    }
+
+    &_inner {
+        @include inner()
+    }
+
+    &_profile {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: left;
+        margin-top: 20px;
+        column-gap: 30px;
+    }
+
+    &_comment {
+        background-color: #fff;
+        border-radius: 10px;
+        border: solid 1px #A3A3A3;
+        padding: 45px 40px;
+        font-size: 14px;
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 2;
+        row-gap: 40px;
+    }
+
+    &_column {
+        display: grid;
+        row-gap: 60px;
+    }
+
+    &_campany {
+        font-weight: bold;
+    }
+
+    @media(width >=#{map-get($bs,"desktop")}) {
+        &_column {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 80px;
+        }
+    }
+}
+
+/* footer     */
+.footer {
+    padding: 80px 0;
+    background-color: #2F2F2F;
+    text-align: center;
+
+    small {
+        font-size: 12px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+}

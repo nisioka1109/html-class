@@ -1,0 +1,231 @@
+body {
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.header {
+  padding: 40px 0;
+}
+.header_logo {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.header_inner {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header_global ul {
+  display: grid;
+  grid-auto-flow: column;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.header_company {
+  color: #E40065;
+}
+
+/* mainvisual. */
+.mainvisual {
+  margin-bottom: 80px;
+}
+.mainvisual_inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy_title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+.philosophy_title::before {
+  content: "philosophy";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.philosophy_title::after {
+  content: "";
+}
+.philosophy_title::after {
+  content: "";
+  display: block;
+  border-bottom: solid 2px #E40065;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+.philosophy_inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.philosophy p {
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 2.5;
+}
+
+.works {
+  margin-bottom: 120px;
+}
+.works_title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+.works_title::before {
+  content: "WORKS";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.works_title::after {
+  content: "";
+}
+.works_title::after {
+  content: "";
+  display: block;
+  border-bottom: solid 2px #E40065;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+.works_house {
+  position: relative;
+}
+.works_inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.works_new {
+  position: absolute;
+  bottom: 150px;
+  left: 20px;
+  background-color: #E40065;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 15px 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.works_subtitle {
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+.works_column {
+  display: grid;
+  row-gap: 60px;
+}
+@media (width >= 1000px) {
+  .works_column {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+
+.voice {
+  background-color: #F4F4F4;
+  padding: 80px 0 120px;
+}
+.voice_title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+}
+.voice_title::before {
+  content: "VOICE";
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1;
+}
+.voice_title::after {
+  content: "";
+}
+.voice_title::after {
+  content: "";
+  display: block;
+  border-bottom: solid 2px #E40065;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+.voice_inner {
+  max-width: 1000px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.voice_profile {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: left;
+  margin-top: 20px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.voice_comment {
+  background-color: #fff;
+  border-radius: 10px;
+  border: solid 1px #A3A3A3;
+  padding: 45px 40px;
+  font-size: 14px;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  row-gap: 40px;
+}
+.voice_column {
+  display: grid;
+  row-gap: 60px;
+}
+.voice_campany {
+  font-weight: bold;
+}
+@media (width >= 1000px) {
+  .voice_column {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+
+/* footer     */
+.footer {
+  padding: 80px 0;
+  background-color: #2F2F2F;
+  text-align: center;
+}
+.footer small {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=style.css.map */
