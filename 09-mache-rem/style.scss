@@ -1,0 +1,229 @@
+@use "sass:math";
+
+// =================================================================
+//  Variables
+// =================================================================
+
+// --- Spacing ---
+$space-xs: 0.25rem; // 4px
+$space-s: 0.5rem; // 8px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-xxxl: 3rem; // 48px
+
+// --- Colors ---
+$color-text: #000;
+$color-base: #000;
+$color-main: #000;
+$color-accent: #000;
+$color-bg: #000;
+
+// --- Typography ---
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// --- Breakpoints ---
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 1024px
+);
+
+
+// =================================================================
+//  Functions
+// =================================================================
+
+// pxをremに変換する
+// @param {number} $px-value - px値
+// @return {string} - rem値
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XDのトラッキング値をemに変換する
+// @param {number} $xd-value - XDのトラッキング値
+// @return {string} - em値
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+
+// =================================================================
+//  Mixins
+// =================================================================
+
+// メディアクエリ (モバイルファースト)
+// @param {string} $breakpoint - $breakpointsのキー
+@mixin mq($breakpoint: desktop) {
+    @media (width >=map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// インナー幅の指定
+// @param {number} $mw - max-width
+// @param {number} $w  - width
+@mixin inner($mw: 1000px, $w: 90%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* header       */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.25;
+    line-height: 1.5rem;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.header {
+    background-color: rgba(43, 43, 43, 0.8);
+    padding: 2rem;
+    position: fixed;
+    width: 100%;
+
+    &_global ul {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        column-gap: 1.5rem;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    &_color {
+        color: #ED145B;
+    }
+
+    &_inner {
+        @include inner;
+        display: grid;
+        grid-auto-flow: column;
+    }
+}
+
+/* mainvisual      */
+.mainvisual {
+    padding: 8rem 0;
+    background: url(../images/bg_mainvisual.png)no-repeat center center/cover;
+    color: #fff;
+
+
+    p {
+        font-size: 14px;
+        margin-bottom: 1.2rem;
+    }
+
+    &_title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+
+    &_color {
+        color: #ED145B;
+    }
+
+    &_btn {
+        display: block;
+        margin-top: 3rem;
+        width: 200px;
+        color: #fff;
+        background-color: #ED145B;
+        padding: 0.8rem 2.3rem;
+        font-weight: bold;
+    }
+
+    &_inner {
+        @include inner;
+    }
+
+    @include mq() {
+        .mainvisual_btn {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &_title {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+.updates {
+    padding: 6rem 0;
+
+    &_title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #2B2B2B;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    &_inner {
+        @include inner;
+    }
+
+    &_subtitle {
+        font-weight: bold;
+        margin: 1.8rem 0 0.8rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        font-size: 0.7rem;
+        padding: 1.6rem 0;
+        border-top: solid 1px #2B2B2B;
+    }
+
+    &_column {
+        display: grid;
+        row-gap: 3rem;
+    }
+
+    &_btn {
+        display: block;
+        width: 200px;
+        margin-top: 2rem;
+        font-weight: bold;
+        background-color: #EDAA14;
+        padding: 0.8rem 2.3rem;
+        color: #fff;
+    }
+
+    @include mq() {
+        .updates_column {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3rem;
+        }
+    }
+}
+
+.footer {
+    padding: 2rem 0 7rem;
+    background-color: #2B2B2B;
+    color: #fff;
+    font-size: 0.8rem;
+
+    &_inner {
+        @include inner;
+    }
+}
